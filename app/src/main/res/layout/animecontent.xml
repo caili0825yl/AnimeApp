@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="vertical"
+    android:fadingEdge="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/staff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="制作团队："
+        android:layout_below="@id/card1"/>
+
+    <TextView
+        android:id="@+id/voice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+
+        android:text="声优列表："
+        android:layout_below="@id/card2"/>
+
+    <TextView
+        android:id="@+id/co"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+
+        android:text="剧情简介："
+        android:layout_below="@id/card3"/>
+
+    <android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="5dp"
+    android:id="@+id/card1"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+
+        >
+
+        <TextView
+            android:id="@+id/animetv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+                android:layout_below="@id/animetitle"
+            android:layout_centerHorizontal="true"
+
+            />
+
+        <TextView
+            android:id="@+id/animetitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+android:gravity="center"
+
+
+            android:textSize="20dp" />
+
+        <ImageView
+            android:id="@+id/animefont"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_below="@id/animetv"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+
+            />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="5dp"
+        android:id="@+id/card2"
+        android:layout_below="@id/staff"
+        >
+
+        <TextView
+            android:id="@+id/animestaff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:lineSpacingExtra="5dp"
+
+            />
+
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="5dp"
+        android:id="@+id/card3"
+        android:layout_below="@id/voice"
+
+        >
+
+        <TextView
+            android:id="@+id/animevoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/card3"
+            android:padding="10dp"
+            android:lineSpacingExtra="5dp"
+            />
+
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="5dp"
+        android:id="@+id/card4"
+        android:layout_below="@id/co"
+
+        >
+
+    <TextView
+        android:id="@+id/animecontent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:lineSpacingExtra="5dp"
+
+        />
+
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
+</ScrollView>
