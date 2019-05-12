@@ -71,26 +71,17 @@ private String regex2="[a-z0-9]+";
                     Mytoast.showToast(Register.this,"两次密码不一致！");
                 }else if (!(username.getText().toString().matches(regex1))){
                    Mytoast.showToast(Register.this,"用户名不含有字母！");
-
-
                 }else if(!(username.getText().toString().matches(regex2))||! password.getText().toString().matches(regex2)){
                     Mytoast.showToast(Register.this,"用户名或密码含有非法字符！");
-
                 }
                 else if(username.getText().toString().length()<8){
                    Mytoast.showToast(Register.this,"用户名过短！");
                 }
                 else if (password.getText().toString().length()<6){
                     Mytoast.showToast(Register.this,"密码过短！");
-
-
-
                 }
-
-
 else
                     {
-
                     new Thread(new Runnable() {
                         @Override
                         public void run() {

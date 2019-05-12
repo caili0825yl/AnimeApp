@@ -39,13 +39,7 @@ public class ContentView extends AppCompatActivity {
                     OkHttpClient client=new OkHttpClient();
                     Request request=new Request.Builder()
                             .url(url).build();
-
                     Response response=client.newCall(request).execute();
-
-
-
-
-
                     byte[]  b=response.body().bytes();
                     String   responseData = new String(b, "UTF-8");
 
@@ -72,7 +66,6 @@ public class ContentView extends AppCompatActivity {
                 ltitle.setText(ltitle1);
                 Glide.with(image.getContext()).load(image1).apply(options).into(image);
                 content.setText(content1);
-
             }
         });
     }

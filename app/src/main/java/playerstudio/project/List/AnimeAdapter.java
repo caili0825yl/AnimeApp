@@ -178,7 +178,6 @@ holder.add.setOnClickListener(new View.OnClickListener() {
 holder.minus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                     int position=holder.getAdapterPosition();
                     Anime anime=animeList.get(position);
                     OkHttpClient client=new OkHttpClient();
@@ -210,19 +209,8 @@ holder.minus.setOnClickListener(new View.OnClickListener() {
                         }
                     };
                     new Thread(networkTask).start();
-
-
-
-
-
-
-
-
-
             }
-
         });
-
         return holder;
     }
 
@@ -234,7 +222,7 @@ holder.minus.setOnClickListener(new View.OnClickListener() {
         Anime anime=animeList.get(i);
         RequestOptions options = new RequestOptions().placeholder(R.drawable.loading);
 
-        Glide.with(mContext).load(animeList.get(i).getFont())
+        Glide.with(mContext.getApplicationContext()).load(animeList.get(i).getFont())
                 .apply(options) .into(viewHolder.Aimage);
         viewHolder.Aname.setText(anime.getName());
         viewHolder.Atv.setText(anime.getPlatform());

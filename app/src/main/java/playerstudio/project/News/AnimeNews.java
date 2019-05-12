@@ -120,7 +120,7 @@ public class AnimeNews extends Fragment
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
 
                 requestNew();
-                page++;
+
                 refreshLayout.finishRefresh();
             }
         });
@@ -141,7 +141,6 @@ public class AnimeNews extends Fragment
             page++;
         // 根据返回到的 URL 链接进行申请和返回数据
         String address = "http://2324k8108v.iok.la:22557/news/getlist?page=5&type=anime&start="+page;    // key
-
         HttpUtil.sendOkHttpRequest(address, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -159,13 +158,8 @@ public class AnimeNews extends Fragment
 
                 String responseText = new String(b, "UTF-8");
                 List<GsonNews> newslist = Utility.parseJsonWithGson1(responseText);
-
-
-
-
                 for (GsonNews gsonnews : newslist) {
                     News news = new News(gsonnews.id, gsonnews.type,gsonnews.title,gsonnews.font,gsonnews.date);
-
                     List.add(0,news);
                 }
 
@@ -176,8 +170,6 @@ public class AnimeNews extends Fragment
                         mRecyclerView.smoothScrollToPosition(0);
                   //      refreshLayout.setRefreshing(false);
                     }
-
-                    ;
                 });
             }
 
@@ -188,8 +180,7 @@ public class AnimeNews extends Fragment
     public void refresh() {
                 page=1;
         // 根据返回到的 URL 链接进行申请和返回数据
-        String address = "http://2324k8108v.iok.la:22557/news/getlist?page=5&type=anime&start="+page;    // key
-
+        String address = "http://2324k8108v.iok.la:22557/news/getlist?page=5&type=anime&start="+page;
         HttpUtil.sendOkHttpRequest(address, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -200,17 +191,12 @@ public class AnimeNews extends Fragment
                     }
                 });
             }
-
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 byte[] b = response.body().bytes();
         List.clear();
                 String responseText = new String(b, "UTF-8");
                 List<GsonNews> newslist = Utility.parseJsonWithGson1(responseText);
-
-
-
-
                 for (GsonNews gsonnews : newslist) {
                     News news = new News(gsonnews.id, gsonnews.type,gsonnews.title,gsonnews.font,gsonnews.date);
 
@@ -225,16 +211,13 @@ public class AnimeNews extends Fragment
                         //      refreshLayout.setRefreshing(false);
                     }
 
-                    ;
                 });
             }
-
         });
 
     }
 
 public void pd(){
-
     new Thread(new Runnable() {
         @Override
         public void run() {
@@ -250,46 +233,26 @@ public void pd(){
                 titles.clear();
 
                 for (AnimeN animeN : animenews) {
-
                     images.add(animeN.getFont());
-
                     titles.add(animeN.getTitle());
                 }
-
-
                 banner.setOnBannerListener(new OnBannerListener() {
                     long a;
                     @Override
                     public void OnBannerClick(int position) {
-
-
-
-                             a=animenews.get(position).getId();
-
-
+                       a=animenews.get(position).getId();
                         intent = new Intent(getActivity(), ContentView.class);
-
-
-
                         intent.putExtra("id",a);
                         startActivity(intent);
-
                     }
                 });
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-
                         banner.setBannerTitles(titles);
                         banner.setImages(images);
-
-
                         banner.start();
-
-
                     }
-
-
                 });
 
             }catch (Exception e
@@ -303,7 +266,6 @@ public void pd(){
                     mRecyclerView.smoothScrollToPosition(0);
                //     refreshLayout.setRefreshing(false);
                 }
-
                 ;
             });
         }

@@ -79,7 +79,7 @@ public class ContentView extends AppCompatActivity {
                 staff.setText(c);
                 voice.setText(d);
                 title.setText(f);
-                Glide.with(ContentView.this).load(a)
+                Glide.with(ContentView.this.getApplicationContext()).load(a)
                         .apply(options) .into(image);
 
                 animecontent.setText(e);

@@ -81,7 +81,7 @@ recyclerView.setAdapter(adapter);
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
 
                 requestNew();
-                page++;
+
                 refreshLayout.finishRefresh();
             }
         });
